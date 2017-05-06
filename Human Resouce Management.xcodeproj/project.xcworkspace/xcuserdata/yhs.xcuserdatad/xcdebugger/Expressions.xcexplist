@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "employee::get_individualEmpNo():employee.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "e">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "insert_employee(employee*):interact.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "save_file():interact.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "employee_">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main_action():interact.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "e">
+            </PersistentString>
+            <PersistentString
+               value = "employee_">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
