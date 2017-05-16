@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "search_employee_info(std::__1::vector&lt;employee, std::__1::allocator&lt;employee&gt; &gt;&amp;, char const*, int&amp;):interact.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "input[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "employee::get_individualEmpNo():employee.cpp">
          <PersistentStrings>
             <PersistentString
@@ -12,6 +20,17 @@
       </ContextState>
       <ContextState
          contextName = "insert_employee(employee*):interact.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "load_file():interact.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "info[1]">
+            </PersistentString>
+            <PersistentString
+               value = "vec">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "save_file():interact.cpp">

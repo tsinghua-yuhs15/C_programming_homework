@@ -5,6 +5,9 @@ using namespace std;
 int employee::get_individualEmpNo(){
 	return this->individualEmpNo;
 }
+string employee::get_name(){
+    return this->name;
+}
 string employee::get_grade(){
 	return this->grade;
 }
@@ -29,7 +32,7 @@ void employee::set_employee_info(string name,string gr,float ap){
 	this->accumPay=ap;
 }
 void employee::dis_employee_info(){
-	cout<<individualEmpNo<<" "<<grade<<" "<<accumPay<<endl;
+	cout<<individualEmpNo<<" "<<name<<" "<<grade<<" "<<accumPay<<endl;
 }
 double employee::pay(){
     return accumPay;//此处如此定义，否则若直接返回accumpay则无法区分pay（）定义为是否virtual的区别

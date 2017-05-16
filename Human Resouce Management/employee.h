@@ -30,8 +30,12 @@ public:
 	~employee(){
 		/*cout<<this->individualEmpNo<<"     欢迎使用，再见"<<endl;*/
 	}
+    static void reset(){
+        staff_count=0;
+    }
 	int get_individualEmpNo();
 	string get_grade();
+    string get_name();
 	float get_accumPay();
 	//void set_individualEmpNo(int no);
 	void set_grade(string gr);
@@ -54,12 +58,12 @@ private:
 	int valid;//判断是否有效
 public:
 	Manager(string name,string l,string d) :employee(name,"manager", 12000.0) {
-		if (manager_count >= MAX_MANAGER_COUNT && d!="Sales Department") {
-			cout << "创建失败，原因：经理超过最大人数"<< endl;
-			valid = 0;
-			invalid_extends();
-			return;
-		}
+//		if (manager_count >= MAX_MANAGER_COUNT && d!="Sales Department") {
+//			cout << "创建失败，原因：经理超过最大人数"<< endl;
+//			valid = 0;
+//			invalid_extends();
+//			return;
+//		}
 		valid = 1;
 		level = l;
 		department = d;
@@ -85,12 +89,12 @@ private:
 	int valid;//判断是否有效
 public:
 	Technician(string name,int wh,string f,string l) :employee(name,"technician", wh * 260) {
-		if (technician_count >= MAX_TECHNICIAN_COUNT) {
-			cout << "创建失败，原因：技术人员超过最大人数"<<endl;
-			valid = 0;
-			invalid_extends();
-			return;
-		}
+//		if (technician_count >= MAX_TECHNICIAN_COUNT) {
+//			cout << "创建失败，原因：技术人员超过最大人数"<<endl;
+//			valid = 0;
+//			invalid_extends();
+//			return;
+//		}
 		valid = 1;
 		work_hours = wh;
 		level = l;

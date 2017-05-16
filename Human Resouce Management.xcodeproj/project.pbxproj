@@ -229,6 +229,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -257,7 +258,7 @@
 				B073150C1E9B48F100003429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B073150D1E9B48F100003429 /* Build configuration list for PBXNativeTarget "Human Resouce Management" */ = {
 			isa = XCConfigurationList;
@@ -266,7 +267,7 @@
 				B073150F1E9B48F100003429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

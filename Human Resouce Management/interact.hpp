@@ -9,23 +9,23 @@
 #ifndef interact_hpp
 #define interact_hpp
 
+#define  MAX_SIZE 100
+
 #include "welcome_logo.hpp"
-#include <cstdlib>
 #include <fstream>
 #include <map>
 #include <sstream>
 
 
-//使用stlmap中转内存中的employee信息
+//文件格式：编号*姓名*职位*工资
 
 void main_action();
-void init_file();
-void load_file();
-void save_file();
-void change_file();
-string insert_employee();
-string correct_employee();
-map<int,string>::iterator search_employee();
-
+int new_file();
+int load_file();
+int insert_employee_info(vector<employee> &vec);
+int search_employee_info(vector<employee> &vec,const char* input,int &number);
+int save_confirm(vector<employee> &vec);
+int modify(employee &e);
+int display(vector<employee> &vec);
 
 #endif /* interact_hpp */

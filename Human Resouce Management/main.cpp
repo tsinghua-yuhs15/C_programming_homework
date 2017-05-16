@@ -1,5 +1,6 @@
 
 #include "interact.hpp"
+#include <cstring>
 using namespace std;
 void test_cin_cout(employee &e) {
 	cin >> e;
@@ -16,4 +17,5 @@ int main(void){
     welcome_string_print();
    
     main_action();
+
 }
