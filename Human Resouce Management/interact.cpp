@@ -31,9 +31,11 @@ void main_action(){
             case 'l'://load file
                 if(load_file()){
                     cout<<"load error"<<endl;
+                    fflag=0;
                 }
                 break;
             case 'e'://exit
+                cout<<"byebye"<<endl;
                 exit(0);
         }
     }
@@ -77,9 +79,10 @@ int load_file(){
     string input;
     vector<employee> vec;
     char tp[MAX_SIZE];
+    int i,j,k;
     while(f.getline(tp, MAX_SIZE)){
+        i=j=k=0;
         if(!f) cout<<"!!!"<<endl;
-        int i=0,j=0,k=0;
         char info[4][MAX_SIZE],tmp;
         while((tmp=tp[i++])!=0){
             if(tmp=='*'){
@@ -88,6 +91,7 @@ int load_file(){
                 continue;
             }
             info[j][k++]=tmp;
+            info[j][k]=0;
         }
         employee *e=new employee(info[1],info[2],atof(info[3]));
         vec.push_back(*e);

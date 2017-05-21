@@ -26,8 +26,8 @@ void employee::set_accumPay(float ap){
 }
 void employee::set_employee_info(string name,string gr,float ap){
     this->name=name;
-	this->staff_count++;
-	this->individualEmpNo = staff_count;
+//	this->staff_count++;
+//	this->individualEmpNo = staff_count;
 	this->grade=gr;
 	this->accumPay=ap;
 }
