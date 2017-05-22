@@ -13,9 +13,8 @@
 
 #include "welcome_logo.hpp"
 #include <fstream>
-#include <map>
 #include <sstream>
-
+#include <vector>
 
 //文件格式：编号*姓名*职位*工资
 
@@ -28,4 +27,21 @@ int save_confirm(vector<employee> &vec);
 int modify(employee &e);
 int display(vector<employee> &vec);
 
+
+class file_exception{
+public:
+    void create_error(string name,int &fflag){
+        cerr<<"CREATE FILE "+name+" ERROR!"<<endl;
+        fflag=0;
+    }
+    void load_error(string name,int &fflag){
+        cerr<<"LOAD FILE "+name+" ERROR!"<<endl;
+        fflag=0;
+    }
+    void exit_error(string name,int &fflag){
+        cerr<<"EXIT FILE "+name+" ERROR!"<<endl;
+        fflag=0;
+    }
+    
+};
 #endif /* interact_hpp */

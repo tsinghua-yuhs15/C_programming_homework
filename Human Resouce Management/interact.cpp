@@ -5,13 +5,14 @@
 //  Created by 于海粟 on 2017/4/24.
 //  Copyright © 2017年 于海粟. All rights reserved.
 //
-#include <vector>
+
 #include "interact.hpp"
 using namespace std;
 
 fstream f;
 int fflag;
 string filename;
+file_exception fe;
 
 void main_action(){
     fflag=0;
@@ -23,15 +24,19 @@ void main_action(){
         cin>>_inst;
         switch(_inst){
             case 'n'://new file
-                if(new_file()){
-                    cout<<"create file failed"<<endl;
-                    fflag=0;
+                try{
+                    new_file();
+                }
+                catch(file_exception fe){
+                    fe.create_error(filename, fflag);
                 }
                 break;
             case 'l'://load file
-                if(load_file()){
-                    cout<<"load error"<<endl;
-                    fflag=0;
+                try{
+                    load_file();
+                }
+                catch(file_exception fe){
+                    fe.load_error(filename, fflag);
                 }
                 break;
             case 'e'://exit
@@ -45,10 +50,12 @@ int new_file(){
     fflag=1;
     cout<<"Please enter the file name you want:"<<endl;
     cin>>filename;
-    cout<<"using  "+filename<<endl;
-    
     f.open(filename,ios::out);
-    if(!f) return 1;
+    if(!f) {
+        throw fe;
+        return 1;
+    }
+    cout<<"using  "+filename<<endl;
     vector<employee> vec;
     while(1){
         if(fflag==0) break;
@@ -74,7 +81,10 @@ int load_file(){
     cout<<"Please enter the filename you are about to open:"<<endl;
     cin>>filename;
     f.open(filename,ios::in|ios::out);
-    if(!f) return 1;
+    if(!f){
+        throw fe;
+        return 1;
+    }
     cout<<"using "+filename<<endl;
     string input;
     vector<employee> vec;
@@ -98,7 +108,10 @@ int load_file(){
     }
     f.close();
     f.open(filename,ios::in|ios::out);
-    if(!f) cout<<"!!!"<<endl;
+    if(!f) {
+        throw fe;
+        return 1;
+    }
     while(1){
         if(fflag==0) break;
         auto _inst='0';
@@ -139,6 +152,7 @@ int load_file(){
 
 int insert_employee_info(vector<employee> &vec){
     if(!f){
+        throw fe;
         return 1;
     }
     string name,grade;
@@ -173,6 +187,7 @@ int search_employee_info(vector<employee> &vec,const char* input,int &number){
 
 int save_confirm(vector<employee> &vec){
     if(!f){
+        throw fe;
         return 1;
     }
     string write;
