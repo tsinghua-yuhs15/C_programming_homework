@@ -114,5 +114,3 @@
 	Program ended with exit code: 0
 	
 	
-最终文件如图：
-![](/Users/yhs/Desktop/text.png)
